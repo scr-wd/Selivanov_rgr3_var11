@@ -1,4 +1,6 @@
-<?php header("Content-Type: text/html; charset=utf-8"); ?>
+<?php header("Content-Type: text/html; charset=utf-8");
+date_default_timezone_set('UTC');
+echo "Сейчас ".date('Y-m-d H:i:s');?>
 
 <html>
 	<head>
@@ -23,13 +25,14 @@
 				$_GET['value']
 			);
 		}
+		
 		?>
+		
+		
 		
 		<form action="index.php" method="GET">
 			<input type="date" name="value" value="<?php
-			if(isset($myDate)){
-				echo htmlspecialchars($myDate-> Format('Y-m-d'));
-			}
+				echo date('Y-m-d');
 			?>">
 			<input type="submit" name="button" value="Рассчитать">
 		</form>
